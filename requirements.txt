@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+sqlalchemy>=1.4
+pydantic
+mysql-connector-python
+pytest
+requests
+httpx
+python-dotenv
