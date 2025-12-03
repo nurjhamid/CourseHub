@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>CourseHub - Index</title>
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+  <h1>CourseHub</h1>
+
+  <section id="login">
+    <h2>Login</h2>
+    <form id="login-form">
+      <input id="login-username" placeholder="username" required />
+      <input id="login-password" type="password" placeholder="password" required />
+      <button type="submit">Login</button>
+    </form>
+    <div id="login-message"></div>
+    <button id="demo-login">Demo Login</button>
+  </section>
+
+  <section id="register">
+    <h2>Register</h2>
+    <form id="register-form">
+      <input id="reg-name" placeholder="name" required />
+      <input id="reg-username" placeholder="username" required />
+      <input id="reg-email" placeholder="email" required />
+      <input id="reg-phone" placeholder="phone" required />
+      <input id="reg-address" placeholder="address" required />
+      <input id="reg-password" type="password" placeholder="password" required />
+      <select id="reg-role">
+        <option value="student">Student</option>
+        <option value="admin">Admin</option>
+      </select>
+      <button type="submit">Register</button>
+    </form>
+    <div id="register-message"></div>
+  </section>
+
+  <script src="/public/js/utils.js"></script>
+  <script src="/public/js/auth.js"></script>
+</body>
+</html>

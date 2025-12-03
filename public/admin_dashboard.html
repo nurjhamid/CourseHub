@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="admin-info"></div>
+  <button id="logout-btn">Logout</button>
+
+  <h2>Courses</h2>
+  <button id="btn-open-add-course">Add Course</button>
+  <table id="admin-courses-table"><tbody></tbody></table>
+
+  <h2>Enrollments</h2>
+  <table id="admin-enrollments-table"><tbody></tbody></table>
+
+  <!-- modals (simple divs) -->
+  <div id="modal-add-course" class="modal hidden">
+    <input id="add-course-name" placeholder="Name">
+    <input id="add-course-credits" placeholder="Credits">
+    <input id="add-course-max" placeholder="Max">
+    <button id="add-course-save">Save</button>
+    <button data-close>Close</button>
+  </div>
+
+  <div id="modal-edit-course" class="modal hidden">
+    <input id="edit-course-name" placeholder="Name">
+    <input id="edit-course-credits" placeholder="Credits">
+    <input id="edit-course-max" placeholder="Max">
+    <button id="edit-course-save">Save</button>
+    <button data-close>Close</button>
+  </div>
+
+  <div id="modal-grade" class="modal hidden">
+    <input id="grade-input" placeholder="Grade">
+    <button id="assign-grade-save">Assign</button>
+    <button data-close>Close</button>
+  </div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/admin_dashboard.js"></script>
+  <script src="js/admin_courses.js"></script>
+  <script src="js/admin_grades.js"></script>
+</body>
+</html>
