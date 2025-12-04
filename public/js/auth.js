@@ -1,4 +1,4 @@
-// depends on utils.js
+
 
 document.addEventListener("DOMContentLoaded", () => {
   setupIndexPage();
