@@ -15,7 +15,7 @@ class RegisterPayload(BaseModel):
     password: str
     phone: str
     address: str
-    role: str = "student"  # 'student' or 'admin'
+    role: str = "student"  
     name: str
 
 class LoginPayload(BaseModel):
