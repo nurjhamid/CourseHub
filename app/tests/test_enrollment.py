@@ -15,7 +15,6 @@ class EnrollmentTests(unittest.TestCase):
                 db.close()
         app.dependency_overrides[db_mod.get_db] = override_get_db
         self.client = TestClient(app)
-        # create admin and course and student
         self.client.post("/auth/register", json={"username":"admin1","email":"a@a.com","password":"pw","phone":"p","address":"a","role":"admin","name":"Admin"})
         r = self.client.post("/auth/login", json={"username":"admin1","password":"pw"})
         admin = r.json()
@@ -28,7 +27,6 @@ class EnrollmentTests(unittest.TestCase):
         app.dependency_overrides = {}
 
     def test_student_enroll(self):
-        # list courses to get id
         courses = self.client.get("/courses/").json()
         cid = courses[0]["course_id"]
         res = self.client.post("/courses/enroll", json={"user_id": self.student["user_id"], "course_id": cid})
@@ -53,3 +51,4 @@ class EnrollmentTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
