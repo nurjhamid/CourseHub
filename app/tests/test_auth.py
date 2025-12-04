@@ -8,7 +8,7 @@ from app.models import database as db_mod
 class AuthTests(unittest.TestCase):
     def setUp(self):
         engine, SessionLocal = create_in_memory_db()
-        # patch the app dependency
+     
         def override_get_db():
             db = SessionLocal()
             try:
