@@ -17,22 +17,22 @@ class ModelTests(unittest.TestCase):
         self.assertFalse(validate_grade("Z"))
 
     def test_enroll_logic_raises_if_full(self):
-        # create course and student records manually
+    
         from app.models.course_model import Course, Student, Enrollment, User, Base
         c = Course(course_name="LimitCourse", credits=1, max_students=1)
         u1 = User(username="u1", password="p", email="u1@ex.com", phone="p", address="a", role="student")
         u2 = User(username="u2", password="p", email="u2@ex.com", phone="p", address="a", role="student")
         s1 = Student(name="S1")
         s2 = Student(name="S2")
-        # attach via db session
+        
         self.db.add(u1); self.db.flush()
         s1.user_id = u1.user_id
         self.db.add(s1)
         self.db.add(c)
         self.db.commit()
-        # first enroll ok
+        
         enroll_student_in_course(self.db, s1, c)
-        # create another user/student and try enrolling -> should raise ValueError
+        
         self.db.add(u2); self.db.flush()
         s2.user_id = u2.user_id
         self.db.add(s2); self.db.commit()
@@ -54,3 +54,4 @@ class ModelTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
